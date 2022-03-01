@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -16,13 +17,13 @@ import com.example.demo.model.User;
 import com.example.demo.repository.UserRepo;
 
 @SpringBootApplication
-public class ApiPropia {
+public class ApiPropia extends SpringBootServletInitializer{
     @Autowired 
     private PasswordEncoder passwordEncoder;
 	@Autowired 
 	private UserRepo repositorio;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		SpringApplication.run(ApiPropia.class, args);
 
 
